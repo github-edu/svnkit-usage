@@ -45,7 +45,7 @@ public class NewBranchTestCase2 {
          * source and target repository paths
          */
         String srcUrl = "https://vip.alisvn.com/libu.demo/trunk";
-        String tgtUrl = "https://vip.alisvn.com/libu.demo/branches/dev_demoWar_1.1.0";
+        String tgtUrl = "https://vip.alisvn.com/libu.demo/branches/dev";
         /*
          * Initializes the library (it must be done before ever using the
          * library itself)
