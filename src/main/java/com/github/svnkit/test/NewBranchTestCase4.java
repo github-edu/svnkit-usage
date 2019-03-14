@@ -25,7 +25,7 @@ import org.tmatesoft.svn.core.wc.SVNCopySource;
 import org.tmatesoft.svn.core.wc.SVNRevision;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
-public class NewBranchTestCase3 {
+public class NewBranchTestCase4 {
 
 	static SVNClientManager ourClientManager = null;
 	
@@ -37,14 +37,15 @@ public class NewBranchTestCase3 {
          * Creates an instance of SVNClientManager providing authentication
          * information (name, password) and an options driver
          */
-    	ourClientManager = SVNClientManager.newInstance(options, "admin", "admin");
+    	ourClientManager = SVNClientManager.newInstance(options, "libu", "libu");
         
         /*
          * Default values:
          * source and target repository paths
          */
         String srcUrl = "http://10.15.15.120/svn/lizw-test/trunk";
-        String tgtUrl = "http://10.15.15.120/svn/lizw-test/branches/3.0";
+        String tgtUrl = "http://10.15.15.120/svn/lizw-test/branches/2.0";
+//        String tgtUrl = "http://10.15.15.120/svn/lizw-test/tags/1.0";
         /*
          * Initializes the library (it must be done before ever using the
          * library itself)
@@ -61,8 +62,8 @@ public class NewBranchTestCase3 {
          * Deault auth manager is used to cache a username in the 
          * default Subversion credentials storage area.
          */
-        srcRepository.setAuthenticationManager(SVNWCUtil.createDefaultAuthenticationManager("admin", "admin".toCharArray()));
-        tgtRepository.setAuthenticationManager(SVNWCUtil.createDefaultAuthenticationManager("admin", "admin".toCharArray()));
+        srcRepository.setAuthenticationManager(SVNWCUtil.createDefaultAuthenticationManager("libu", "libu".toCharArray()));
+        tgtRepository.setAuthenticationManager(SVNWCUtil.createDefaultAuthenticationManager("libu", "libu".toCharArray()));
         
         try{
             System.out.println();
@@ -78,7 +79,7 @@ public class NewBranchTestCase3 {
 //            DisplayRepositoryTree.listEntries(srcRepository, "");
             System.out.println();
             
-            copy(srcURL, tgtURL, false, "New tag demoWar_1.1.0_T_201903131705 by libu ");
+            copy(srcURL, tgtURL, false, "New branch 1.0.0");
             
 //            DisplayRepositoryTree.listEntries(tgtRepository, "");
             
