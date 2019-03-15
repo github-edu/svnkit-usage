@@ -125,7 +125,12 @@ public class SvnkitUtil {
      * This method performs commiting an addition of a  directory  containing  a
      * file.
      */
-    public static SVNCommitInfo addDir(ISVNEditor editor, String dirPath,
+	public static SVNCommitInfo addDir(ISVNEditor editor, String dirPath,
+			String filePath, byte[] data) throws SVNException {
+		return addDir(editor, dirPath, null, filePath, data);
+	}
+	
+    public static SVNCommitInfo addDir(ISVNEditor editor, String dirPath, String[] childDirs,
             String filePath, byte[] data) throws SVNException {
         /*
          * Always called first. Opens the current root directory. It  means  all
@@ -148,6 +153,13 @@ public class SvnkitUtil {
          * with history (is not copied, in other words).
          */
         editor.addDir(dirPath, null, -1);
+        
+        if (!ArrayUtils.isEmpty(childDirs)) {
+        	for (String dir : childDirs) {
+				editor.addDir(trimPathSuffix(dirPath) + trimPath(dir), null, -1);
+				editor.closeDir();
+			}
+        }
         /*
          * Adds a new file to the just added  directory. The  file  path is also 
          * defined as relative to the root directory.
