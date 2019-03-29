@@ -2,6 +2,8 @@ package com.github.svnkit.test;
 
 import java.net.URI;
 
+import org.apache.commons.lang.ArrayUtils;
+
 public class Test3 {
 	
 	public static void main(String[] args) {
@@ -11,6 +13,10 @@ public class Test3 {
 		
 		System.out.println(uri.getPath());
 		System.out.println(uri.getUserInfo());
+		
+		System.out.println(ArrayUtils.toString(new String[] { "xxx", "yyy", "zzz" }));
+		
+		System.out.println(String.join(",", new String[] { "xxx", "yyy", "zzz" }));
 	}
 
 }
