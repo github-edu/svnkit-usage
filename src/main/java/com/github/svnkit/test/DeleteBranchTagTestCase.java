@@ -11,6 +11,9 @@ import org.tmatesoft.svn.core.io.SVNRepository;
 import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
+/**
+ * 计算机科学技术 | 卧拥六合 大梦醒而驱百策  龙御九天  舍江海而率千军
+ */
 public class DeleteBranchTagTestCase {
 	
 	public static void main(String[] args) throws Exception {
